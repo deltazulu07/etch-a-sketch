@@ -1,0 +1,23 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: lightblue;
+}
+
+.header {
+    display: flex;
+    /* align-items: center; */
+    justify-content: center;
+    color: black;
+    font-size: 48px;
+    font-weight: bolder;
+    border: 2px dotted green;
+    padding: 36px;
+}
