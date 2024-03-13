@@ -60,14 +60,16 @@ body {
 }
 
 .divContainer {
-    border: 2px solid black;
-    width: 480px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    border: 1px solid black;
+    width: 482px;
     aspect-ratio: 1 / 1;
 }
 
 .square {
-    border: 2px solid orange;
-    width: 10px;
+    border: 1px solid orange;
     aspect-ratio: 1 / 1;
 }
 
