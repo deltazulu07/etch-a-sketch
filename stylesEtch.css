@@ -11,6 +11,7 @@ body {
     background-color: rgb(233, 218, 232);
 }
 
+/* CSS for header section */
 .header {
     display: flex;
     justify-content: center;
@@ -21,6 +22,7 @@ body {
     padding: 24px;
 }
 
+/* CSS for controls section */
 .controls {
     display: flex;
     flex-direction: row;
@@ -49,6 +51,7 @@ body {
 
 }
 
+/* CSS for grid section */
 .grid {
     display: flex;
     justify-content: center;
@@ -62,6 +65,13 @@ body {
     aspect-ratio: 1 / 1;
 }
 
+.square {
+    border: 2px solid orange;
+    width: 10px;
+    aspect-ratio: 1 / 1;
+}
+
+/* CSS for footer section */
 .footer {
     display: flex;
     justify-content: center;

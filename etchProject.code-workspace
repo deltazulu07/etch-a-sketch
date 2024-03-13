@@ -1,0 +1,13 @@
+{
+	"folders": [
+		{
+			"path": "."
+		},
+		{
+			"path": "../etch-a-sketch"
+		},
+		{
+			"path": "../odin-foundationproj"
+		}
+	]
+}
