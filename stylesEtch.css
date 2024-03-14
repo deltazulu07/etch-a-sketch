@@ -69,7 +69,8 @@ body {
 }
 
 .square {
-    border: 1px solid orange;
+    border: 1px solid gray;
+    width: 28px;
     aspect-ratio: 1 / 1;
 }
 
