@@ -1,10 +1,10 @@
-const canvasLength = 16;
+const squaresPerRow = 16;
 
-function drawDivs(numPerRow) {
+function drawGrid(numPerRow) {
     // function draws divis inside parent container
 
     // use querySelector to select the parent div 
-    const parentDiv = document.querySelector('.divContainer');
+    const gridContainer = document.querySelector('.divContainer');
 
     for (let i = 1; i <= numPerRow * numPerRow; i++) {
         // create a new div element
@@ -14,7 +14,7 @@ function drawDivs(numPerRow) {
         squareDiv.classList.add('square');
 
         // append the new div to the parent div
-        parentDiv.appendChild(squareDiv);
+        gridContainer.appendChild(squareDiv);
     }
 
 }
@@ -43,6 +43,6 @@ function drawDivs(numPerRow) {
 
 // }
 
-// squareWidth(canvasLength);
+// squareWidth(squaresPerRow);
 
-drawDivs(canvasLength);
+drawGrid(squaresPerRow);
