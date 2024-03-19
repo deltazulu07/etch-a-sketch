@@ -1,48 +1,39 @@
 const squaresPerRow = 16;
-
-function drawGrid(numPerRow) {
-    // function draws divis inside parent container
+function createRow(numSquares) {
+    //draw one row with x squares
 
     // use querySelector to select the parent div 
     const gridContainer = document.querySelector('.divContainer');
 
-    for (let i = 1; i <= numPerRow * numPerRow; i++) {
-        // create a new div element
-        const squareDiv = document.createElement('div');
+    //create a new row container
+    const newRow = document.createElement('div');
 
-        //add static CSS styles
-        squareDiv.classList.add('square');
+    function addSquaresToRow(parentDiv) {
+        //create X number squares & append to parent div
+        for (let i = 1; i <= squaresPerRow; i++) {
+            const squareDiv = document.createElement('div');
+            
+            //add static styles to square
+            squareDiv.classList.add('square');
 
-        // append the new div to the parent div
-        gridContainer.appendChild(squareDiv);
+            //append squares to row div
+            parentDiv.appendChild(squareDiv);
+        }
     }
 
+    addSquaresToRow(newRow);
+
+    //add CSS styles for row
+    newRow.classList.add('row');
+
+    //append the new row div to the parent div
+    gridContainer.appendChild(newRow);
 }
 
-// function squareWidth(numPerRow) {
-//     // function dynamically update square width
+function drawSquareGrid() {
+    for (let i = 1; i<= squaresPerRow; i++) {
+        createRow(squaresPerRow);
+    }
+}
 
-//     // get the width and border with of the parent div
-//     const parent = document.querySelector('.divContainer');
-//     // get all computed styles for the parent div
-//     const stylesParent = window.getComputedStyle(parent);
-
-//     // get the specific properties of parent div
-//     const borderWidth = stylesParent.borderWidth;
-//     const elementWidth = stylesParent.width;
-
-//     // get the square div's border width
-//     const squareDiv = document.querySelector('.square');
-//     const stylesSquare = window.getComputedStyle(squareDiv);
-//     const squareBorderWidth = stylesSquare.borderWidth;
-
-//     // compute square width
-//     const widthOfsquare = (elementWidth - borderWidth * 2) / numPerRow - squareBorderWidth * 2;
-
-//     return widthOfsquare;
-
-// }
-
-// squareWidth(squaresPerRow);
-
-drawGrid(squaresPerRow);
+drawSquareGrid();

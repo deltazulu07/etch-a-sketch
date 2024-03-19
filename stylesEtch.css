@@ -8,7 +8,7 @@ body {
     flex-direction: column;
     height: 100vh;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background-color: rgb(233, 218, 232);
+    background-color: rgb(218, 211, 218);
 }
 
 /* CSS for header section */
@@ -61,17 +61,23 @@ body {
 
 .divContainer {
     display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
+    flex-direction: column;
     border: 1px solid black;
-    width: 482px;
+    width: 480px;
     aspect-ratio: 1 / 1;
 }
 
+.row {
+    display: flex;
+    flex-direction: row;
+    flex: 1 1 0;
+    /* border: 1px solid green; */
+
+}
+
 .square {
-    /* manually edit the width of the squares */
     border: 1px solid gray;
-    width: 28px;
+    flex: 1 1 0;
     aspect-ratio: 1 / 1;
 }
 
