@@ -10,7 +10,7 @@ document.addEventListener('mousemove', function(e) {
 
     if (mouseX >= position.left && mouseX <= position.right && mouseY >= position.top && mouseY <= position.bottom) {
         document.getElementById('mouseIn').textContent = 'Yes';
-        document.getElementById('squareDiv').style.backgroundColor = "yellow";
+        document.getElementById('squareDiv').style.backgroundColor = "#25C219";
     } else {
         document.getElementById('mouseIn').textContent = 'No';
 
