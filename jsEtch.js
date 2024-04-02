@@ -1,5 +1,5 @@
 const squaresPerRow = 16;
-function createRow(numSquares) {
+function DrawOneRow(numSquares) {
     //draw one row with x squares
 
     // use querySelector to select the parent div 
@@ -18,6 +18,8 @@ function createRow(numSquares) {
 
             //append squares to row div
             parentDiv.appendChild(squareDiv);
+
+            hoverEffect(squareDiv);
         }
     }
 
@@ -30,10 +32,18 @@ function createRow(numSquares) {
     gridContainer.appendChild(newRow);
 }
 
-function drawSquareGrid() {
+function DrawAllRows() {
+    // create x rows
     for (let i = 1; i<= squaresPerRow; i++) {
-        createRow(squaresPerRow);
+        DrawOneRow(squaresPerRow);
     }
 }
 
-drawSquareGrid();
+function hoverEffect(element) {
+    element.addEventListener('mouseenter', function (e) {
+        element.style.backgroundColor = "#25C219";
+    });
+
+}
+
+DrawAllRows();
