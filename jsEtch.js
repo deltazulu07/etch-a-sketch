@@ -41,9 +41,15 @@ function DrawAllRows() {
 
 function hoverEffect(element) {
     element.addEventListener('mouseenter', function (e) {
-        element.style.backgroundColor = "#25C219";
+        element.style.backgroundColor = mouseColor;
     });
 
 }
+
+let mouseColor = '';
+const colorBtn = document.querySelector('#btnBlack');
+colorBtn.addEventListener('click', function() {
+    mouseColor = '#000000';
+});
 
 DrawAllRows();
