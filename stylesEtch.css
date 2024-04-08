@@ -12,7 +12,7 @@ body {
 }
 
 /* CSS for header section */
-.header {
+.headerSection {
     display: flex;
     justify-content: center;
     color: black;
@@ -23,7 +23,7 @@ body {
 }
 
 /* CSS for controls section */
-.controls {
+.controlsSection {
     display: flex;
     flex-direction: row;
     justify-content: center;
@@ -52,17 +52,17 @@ body {
 }
 
 /* CSS for grid section */
-.grid {
+.gridSection {
     display: flex;
     justify-content: center;
-    border: 2px dotted pink;
+    border: 2px dotted orange;
     padding: 12px;
 }
 
-.divContainer {
+.gridContainer {
     display: flex;
     flex-direction: column;
-    border: 1px solid black;
+    border: 1px solid purple;
     width: 480px;
     aspect-ratio: 1 / 1;
 }
