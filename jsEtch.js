@@ -55,7 +55,7 @@ colorBtn.addEventListener('click', function() {
 
 
 // part 4: change canvas size
-function changeCanvasSize() {
+function changeCanvasSizebyBtn() {
     const canvasSizeBtn = document.querySelector('#btnCanvasSize');
     canvasSizeBtn.addEventListener('click', function() {
         removeExistingGrid();
@@ -74,11 +74,11 @@ function changeCanvasSize() {
             const limit = 50;
             let condition = false;
             while (condition === false) {
-                const promptMsg = 'Enter a number between 2 and ' + limit + ' for canvas size: ';
+                const promptMsg = 'Enter an integer between 2 and ' + limit + ' for canvas size: ';
                 const userInput = prompt(promptMsg);
                 const gridSizeByUser = Number(userInput);
         
-                if (isNaN(gridSizeByUser) || gridSizeByUser < 2 || gridSizeByUser > limit) {
+                if (isNaN(gridSizeByUser) || (parseFloat(gridSizeByUser) !== parseInt(gridSizeByUser)) || gridSizeByUser < 2 || gridSizeByUser > limit) {
                     alert("Invalid input. Try again.");
                 }
                 else {
@@ -95,4 +95,4 @@ function changeCanvasSize() {
 
 
 DrawAllRows();
-changeCanvasSize();
+changeCanvasSizebyBtn();
