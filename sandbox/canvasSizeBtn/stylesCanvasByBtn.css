@@ -48,20 +48,7 @@ body {
     align-items: center;
     border: 2px dotted blue;
     padding: 12px;
-}
 
-.canvasBtns {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    border: 2px dotted black;
-}
-
-.canvasSize {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    border: 2px dotted pink;
 }
 
 /* CSS for grid section */

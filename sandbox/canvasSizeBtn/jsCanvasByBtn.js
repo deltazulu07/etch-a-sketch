@@ -54,22 +54,14 @@ colorBtn.addEventListener('click', function() {
 });
 
 
-// part 4: change canvas size by slider
-function canvasSizeUserInput() {
-    const input = document.querySelector('#slider');
-    const output = document.querySelector('#value');
-    sliderLabel(input, output);
 
-    input.addEventListener("input", function() {
-        sliderLabel(input, output);
+// part 4: change canvas size by button
+function changeCanvasSizebyBtn() {
+    const canvasSizeBtn = document.querySelector('#btnCanvasSize');
+    canvasSizeBtn.addEventListener('click', function() {
         removeExistingGrid();
-        squaresPerRow = input.value;
-        DrawAllRows();
-    })
-
-    function sliderLabel(input, output) {
-        output.textContent = input.value + ' x ' + input.value;
-    }
+        DrawNewSize();
+    });
 
     function removeExistingGrid () {
         const gridContainer = document.querySelector('.gridContainer');
@@ -77,7 +69,31 @@ function canvasSizeUserInput() {
             gridContainer.removeChild(gridContainer.firstChild);
         }
     }
+
+    function DrawNewSize() {
+        function canvasSizebyUser() {
+            const limit = 50;
+            let condition = false;
+            while (condition === false) {
+                const promptMsg = 'Enter an integer between 2 and ' + limit + ' for canvas size: ';
+                const userInput = prompt(promptMsg);
+                const gridSizeByUser = Number(userInput);
+        
+                if (isNaN(gridSizeByUser) || (parseFloat(gridSizeByUser) !== parseInt(gridSizeByUser)) || gridSizeByUser < 2 || gridSizeByUser > limit) {
+                    alert("Invalid input. Try again.");
+                }
+                else {
+                    condition = true;
+                    return gridSizeByUser;
+                }
+            }
+        }
+        squaresPerRow = canvasSizebyUser();
+        DrawAllRows();
+    }
 }
 
+
+
 DrawAllRows();
-canvasSizeUserInput();
+changeCanvasSizebyBtn();
