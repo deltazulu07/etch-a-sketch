@@ -1,5 +1,6 @@
 let squaresPerRow = 16;
 
+// part 1 and 2: set up grid
 function DrawAllRows() {
     function DrawOneRow(numSquares) {
         //draw one row with x squares
@@ -48,9 +49,9 @@ function hoverEffect(element) {
 
 // BONUS: changing pen color; need to put this global code in a function
 let mouseColor = '';
-const colorBtn = document.querySelector('#btnBlack');
-colorBtn.addEventListener('click', function() {
-    mouseColor = '#000000';
+const colorBtn = document.querySelector('#btnPurple');
+colorBtn.addEventListener('click', function(e) {
+    mouseColor = '#862494';
 });
 
 
@@ -60,7 +61,7 @@ function canvasSizeUserInput() {
     const output = document.querySelector('#value');
     sliderLabel(input, output);
 
-    input.addEventListener("input", function() {
+    input.addEventListener("input", function(e) {
         sliderLabel(input, output);
         removeExistingGrid();
         squaresPerRow = input.value;
@@ -79,5 +80,35 @@ function canvasSizeUserInput() {
     }
 }
 
+// clear canvas button
+function clearCanvas() {
+    const clearBtn = document.querySelector('#clearCanvas');
+    clearBtn.addEventListener('click', removeBkgColor);
+
+    function removeBkgColor() {
+        //remove background color of all elements within a parent
+        const parent = document.querySelector('.gridContainer');
+        const allDescendants = parent.querySelectorAll('*');
+
+        for (let i = 0; i <allDescendants.length; i++) {
+            const descendant = allDescendants[i];
+            if (descendant.style.backgroundColor) {
+                descendant.style.backgroundColor = '';
+            }
+        }
+    }
+}
+
+//eraser button
+
+//select the 'eraser' button
+// event listener for 'click', mouse turns into an eraser icon
+//click on a square, remove the backgroundColor
+
+
+
+
+
 DrawAllRows();
 canvasSizeUserInput();
+clearCanvas();
