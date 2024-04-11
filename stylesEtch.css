@@ -104,3 +104,7 @@ body {
     padding: 12px;
 
 }
+
+.eraseIcon {
+    cursor: pointer;
+}

@@ -2,6 +2,21 @@ let squaresPerRow = 16;
 
 // part 1 and 2: set up grid
 function DrawAllRows() {
+
+    // part 3: hover effect
+    function hoverEffect(element) {
+        element.addEventListener('mouseenter', function (e) {
+            element.style.backgroundColor = mouseColor;
+        });
+    }
+
+    // BONUS: changing pen color; need to put this global code in a function
+    let mouseColor = '';
+    const colorBtn = document.querySelector('#btnPurple');
+    colorBtn.addEventListener('click', function(e) {
+        mouseColor = '#862494';
+    });
+
     function DrawOneRow(numSquares) {
         //draw one row with x squares
     
@@ -39,21 +54,6 @@ function DrawAllRows() {
         DrawOneRow(squaresPerRow);
     }
 }
-
-// part 3: hover effect
-function hoverEffect(element) {
-    element.addEventListener('mouseenter', function (e) {
-        element.style.backgroundColor = mouseColor;
-    });
-}
-
-// BONUS: changing pen color; need to put this global code in a function
-let mouseColor = '';
-const colorBtn = document.querySelector('#btnPurple');
-colorBtn.addEventListener('click', function(e) {
-    mouseColor = '#862494';
-});
-
 
 // part 4: change canvas size by slider
 function canvasSizeUserInput() {
@@ -102,10 +102,17 @@ function clearCanvas() {
 //eraser button
 
 //select the 'eraser' button
-// event listener for 'click', mouse turns into an eraser icon
+// (optional) event listener for 'click', mouse turns into an eraser icon within gridContainer's confines
+//         - use a custom icon for eraser
 //click on a square, remove the backgroundColor
+// need to make sure the 'hover effect' is no longer on. otherwise, it'll continue to draw purple divs
 
 
+const eraseBtn = document.querySelector('#btnEraser');
+eraseBtn.addEventListener('click', function(e) {
+    const grid = document.querySelector('.gridContainer');
+    grid.classList.add('eraseIcon');
+})
 
 
 
