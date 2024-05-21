@@ -108,3 +108,7 @@ body {
 .eraseIcon {
     cursor: pointer;
 }
+
+.active {
+    background-color: lightblue;
+}

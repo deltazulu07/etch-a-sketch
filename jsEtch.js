@@ -1,23 +1,8 @@
 let squaresPerRow = 16;
 
-// part 1 and 2: set up grid
-function DrawAllRows() {
-
-    // part 3: hover effect
-    function hoverEffect(element) {
-        element.addEventListener('mouseenter', function (e) {
-            element.style.backgroundColor = mouseColor;
-        });
-    }
-
-    // BONUS: changing pen color; need to put this global code in a function
-    let mouseColor = '';
-    const colorBtn = document.querySelector('#btnPurple');
-    colorBtn.addEventListener('click', function(e) {
-        mouseColor = '#862494';
-    });
-
-    function DrawOneRow(numSquares) {
+/* Set up grid */
+function setUpAllRows() {
+    function setUpOneRow(numSquares) {
         //draw one row with x squares
     
         // use querySelector to select the parent div 
@@ -37,7 +22,7 @@ function DrawAllRows() {
                 //append squares to row div
                 parentDiv.appendChild(squareDiv);
     
-                hoverEffect(squareDiv);
+                // hoverEffect(squareDiv);
             }
         }
     
@@ -51,11 +36,11 @@ function DrawAllRows() {
     }
     // create x rows
     for (let i = 1; i<= squaresPerRow; i++) {
-        DrawOneRow(squaresPerRow);
+        setUpOneRow(squaresPerRow);
     }
 }
 
-// part 4: change canvas size by slider
+/* Change canvas size by slider */
 function canvasSizeUserInput() {
     const input = document.querySelector('#slider');
     const output = document.querySelector('#value');
@@ -65,7 +50,7 @@ function canvasSizeUserInput() {
         sliderLabel(input, output);
         removeExistingGrid();
         squaresPerRow = input.value;
-        DrawAllRows();
+        setUpAllRows();
     })
 
     function sliderLabel(input, output) {
@@ -80,7 +65,7 @@ function canvasSizeUserInput() {
     }
 }
 
-// clear canvas button
+/* Clear canvas button */
 function clearCanvas() {
     const clearBtn = document.querySelector('#clearCanvas');
     clearBtn.addEventListener('click', removeBkgColor);
@@ -99,7 +84,7 @@ function clearCanvas() {
     }
 }
 
-//eraser button
+/* Eraser button */
 
 //select the 'eraser' button
 // (optional) event listener for 'click', mouse turns into an eraser icon within gridContainer's confines
@@ -115,7 +100,46 @@ eraseBtn.addEventListener('click', function(e) {
 })
 
 
+/* Chnge pen color */ 
+//NOT WORKING. GET ONE COLOR TO WORK FIRST
+function penColor(elementId) {
+    let penColor = '';
+    const colorBtn = document.querySelector(elementId);
+    colorBtn.addEventListener('click', function() {
+        if (elementId === '#btnPurple') {
+            penColor = '#862494';
+            // console.log('pen color is ' + penColor);
+        } 
+        else if (elementId === '#btnRainbow') {
+            penColor = '#249478';
+            console.log('pen color is ' + penColor);
 
-DrawAllRows();
+        }
+        else if (elementId === '#btnColorPicker') {
+            penColor = '#909424';
+            console.log('pen color is ' + penColor);
+
+        }
+        else {
+            penColor = '';
+        }
+    })
+}
+
+penColor('#btnPurple');
+penColor('#btnRainbow');
+penColor('#btnColorPicker');
+
+/* hover effect */
+function hoverEffect(element) {
+    //removed hoverEffect from setting up the grid. hoevereffect() should only be active when a color button is clicked
+     
+    element.addEventListener('mouseenter', function (e) {
+        element.style.backgroundColor = mouseColor;
+    });
+}
+
+
+setUpAllRows();
 canvasSizeUserInput();
 clearCanvas();
